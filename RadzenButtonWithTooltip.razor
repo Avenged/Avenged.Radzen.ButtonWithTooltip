@@ -1,0 +1,53 @@
+﻿@inject TooltipService TS
+@inject ContextMenuService CMS
+@inject IJSRuntime JS
+
+@inherits RadzenComponent
+@implements IDisposable
+@namespace Radzen
+@using Radzen
+@using Radzen.Blazor
+
+@if (Visible)
+{
+    @if (!string.IsNullOrWhiteSpace(Link) && !Click.HasDelegate)
+    {
+        <NavLink href=@Link>
+            <RadzenButton @attributes=@Attributes
+                          Text="@Text"
+                          Variant="@Variant"
+                          Icon="@Icon"
+                          IsBusy="@IsBusy"
+                          BusyText="@BusyText"
+                          ButtonType="@ButtonType"
+                          ButtonStyle="ButtonStyle"
+                          Visible="@Visible"
+                          Style="@Style"
+                          class="@Class"
+                          Size="Size"
+                          MouseEnter="@(args => ShowTooltip(args))"
+                          MouseLeave="@(args => HideTooltip(args))"
+                          Disabled="@Disabled" />
+        </NavLink>
+    }
+    else
+    {
+        <RadzenButton @attributes=@Attributes
+                      Text="@Text"
+                      @onmousedown="@InternalClick"
+                      Variant="@Variant"
+                      Icon="@Icon"
+                      IsBusy="@IsBusy"
+                      ContextMenu=@ShowContextMenuWithItems
+                      BusyText="@BusyText"
+                      ButtonType="@ButtonType"
+                      ButtonStyle="ButtonStyle"
+                      Visible="@Visible"
+                      Style="@Style"
+                      class="@Class"
+                      Size="Size"
+                      MouseEnter="@(args => ShowTooltip(args))"
+                      MouseLeave="@(args => HideTooltip(args))"
+                      Disabled="@Disabled" />
+    }
+}
