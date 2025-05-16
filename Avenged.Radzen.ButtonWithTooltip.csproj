@@ -15,8 +15,8 @@
 		<Description>A custom Radzen component with button and tooltip for Blazor apps.</Description>
 		<PackageTags>blazor;radzen;tooltip;button;component</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<RepositoryUrl>https://github.com/tuusuario/Avenged.Radzen.ButtonWithTooltip</RepositoryUrl>
-		<PackageProjectUrl>https://github.com/tuusuario/Avenged.Radzen.ButtonWithTooltip</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Avenged/Avenged.Radzen.ButtonWithTooltip</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/Avenged/Avenged.Radzen.ButtonWithTooltip</PackageProjectUrl>
 		<PackageIcon>icon.png</PackageIcon>
 		<Copyright>Copyright © 2025</Copyright>
 
@@ -33,7 +33,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Radzen.Blazor" Version="7.0.5" />
+		<PackageReference Include="Radzen.Blazor" Version="[5.0.0,7.0.5)" />
 	</ItemGroup>
 
 	<ItemGroup>
